@@ -41,64 +41,71 @@ How to use
 
 Include freshly middleware somewhere towards the end of your `MIDDLEWARE_CLASSES`.
 
-    ```python
-    MIDDLEWARE_CLASSES = [
+   ```python
+   MIDDLEWARE_CLASSES = [
         'django.middleware.common.CommonMiddleware',
         'django.contrib.sessions.middleware.SessionMiddleware',
         '..............',
 
         # the last middleware perhaps
         'freshly.middleware.assets.AssetVersioningMiddleware',
-    ] 
-    ```
+   ] 
+   ```
 
 
 Decide which assets needs to be version controlled:
 
-    Note that assets with the following extensions will be versioned by default:
-    ```python
-    [
+   ```python
+   # Note that assets with the following extensions will be versioned by default:
+
+   [
         'jpg','jpeg','gif','css','png','js','ico',
         'pdf','doc','docx','ppt','pptx','txt','mov',
         'mp4','mpeg','mp3','swf',
-    ]
-    ```
+   ]
+   ```
    
-    # You can overwrite the defaults via the ``FRESHLY_ASSETS_EXTENTIONS`` in your settings file.
-    ```python
+   ```python
+   # You can overwrite the defaults via the ``FRESHLY_ASSETS_EXTENTIONS`` in your settings file.
+
     FRESHLY_ASSETS_EXTENTIONS = ['my', 'own', 'ext', 'over', 'write', 'the', 'default', 'ones',] # Example ONLY
-    ```
+   ```
    
-    # Or you can append your extensions to the default extensions via ``FRESHLY_ASSETS_EXTENTIONS_EXTRA`` in your settings file.
-    ```python
+   ```python
+   # Or append your extensions to the default extensions via ``FRESHLY_ASSETS_EXTENTIONS_EXTRA`` in your settings file.
     FRESHLY_ASSETS_EXTENTIONS_EXTRA = ['my', 'own', 'ext', 'plus', 'the', 'default', 'ones',] # Example ONLY
-    ```
+   ```
 
 Choose a versioning pattern:
 
-    You can choose any pattern via ``FRESHLY_ASSETS_VERSION`` in your settings file.
-    # Examples:
-    ```python
+   ```python
+   # You can choose any pattern via ``FRESHLY_ASSETS_VERSION`` in your settings file.
+   # Examples:
+
     FRESHLY_ASSETS_VERSION = 'v001' # OR
     FRESHLY_ASSETS_VERSION = 'ver1' # OR
     FRESHLY_ASSETS_VERSION = 'version_01' # Etc.
-    ```
+   ```
 
 During the development:
-    You may want to have a fresh copy of your .css, .js downloaded by your browser during the development
-    You can do so via ``FRESHLY_ASSETS_ALWAYS_FRESH`` in your settings file.
+
+   ```python
+    # You may want to have a fresh copy of your .css, .js downloaded by your browser during the development
+    # You can do so via ``FRESHLY_ASSETS_ALWAYS_FRESH`` in your settings file.
     # Examples:
-    ```python
+
     FRESHLY_ASSETS_ALWAYS_FRESH = True # OR
     FRESHLY_ASSETS_ALWAYS_FRESH = DEBUG
-    ```
+   ```
+
+
 
 Performance:
 =================
 While this process may consumes some minimal CPU cycles, the fact that it's doing it without 
 any complications to your code-space, should be a good reason for you to consider this app.
 
-The application is a perfect tool for the front-end designers during the development.
+The application is a perfect tool for the front-end designers during the development.             
 ``Freshly`` ensures that designer sees the result of his/her changes immediately without constantly
 hitting the browser's refresh button. 
 
