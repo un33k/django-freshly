@@ -122,6 +122,10 @@ Changelog
 =========
 
 
+0.1.1
+-----
+* Ensure total freshness during debugging.
+
 0.1.0
 -----
 * Initial release
