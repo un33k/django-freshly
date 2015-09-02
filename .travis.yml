@@ -1,25 +1,45 @@
 language: python
 
 python:
-  - "2.6"
-  - "2.7"
-  - "3.2"
-  - "3.3"
   - "3.4"
+  - "3.3"
+  - "3.2"
+  - "2.7"
+  - "2.6"
   - pypy
 
+env:
+  - DJANGO="django==1.8.4"
+  - DJANGO="django==1.7.10"
+  - DJANGO="django==1.4.22"
+
 install:
-  - pip install -q -r requirements.txt --use-mirrors
+  - pip install --upgrade pip
+  - pip install $DJANGO
+  - pip install -r requirements.txt
   - pip install -e .
   - pip install pep8
-  - pip install coveralls
   - pip install https://github.com/un33k/pyflakes/tarball/master
+  - pip install coveralls
 
 before_script:
   - "pep8 --exclude=migrations --ignore=E501,E225,E128 ."
   - if [[ $TRAVIS_PYTHON_VERSION == '2.7' ]]; then pyflakes -x W freshly; fi
 
-script: coverage run --source=freshly test.py
+matrix:
+  exclude:
+   - python: "3.4"
+     env: DJANGO="django==1.4.22"
+   - python: "3.3"
+     env: DJANGO="django==1.4.22"
+   - python: "3.2"
+     env: DJANGO="django==1.4.22"
+   - python: "2.6"
+     env: DJANGO="django==1.7.10"
+   - python: "2.6"
+     env: DJANGO="django==1.8.4"
+
+script: coverage run --source=freshly manage.py test
 
 after_success:
   coveralls
