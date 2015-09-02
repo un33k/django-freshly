@@ -1,7 +1,7 @@
 Django Freshly
 ====================
 
-A Django application that enables your server to remotely trigger a client-side asset reload.
+**A Django application that enables your server to remotely trigger a client-side asset reload**
 
 [![status-image]][status-link]
 [![version-image]][version-link]
@@ -51,7 +51,6 @@ Installed `django-freshly` using one of the methods outlined in the `How to inst
 
     FRESHLY_ASSETS_VERSION = 'v001'
 
-   ```python
     # You may want to have a fresh copy of your .css, .js downloaded by your browser during the development
     # You can do so via ``FRESHLY_ASSETS_ALWAYS_FRESH`` in your settings file.
     # Examples:
