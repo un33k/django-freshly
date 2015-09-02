@@ -52,7 +52,7 @@ Install `django-freshly` using one of the methods outlined in the `How to instal
 
     FRESHLY_ASSETS_VERSION = 'v001'
 
-    # Up the version and restart Django to force clients reload your website assets.
+    # Up the version and restart Django to force clients to reload your website assets.
    ```
 
 How to use (development):
