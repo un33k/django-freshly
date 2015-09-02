@@ -7,9 +7,8 @@ FRESHLY_ASSETS_VERSION = getattr(settings, 'FRESHLY_ASSETS_VERSION', '001')
 
 # media extensions we care about - user configurable
 FRESHLY_DEFAULT_ASSETS_EXTENTIONS = [
-    'jpg','jpeg','gif','css','png','js','ico',
-    'pdf','doc','docx','ppt','pptx','txt','mov',
-    'mp4','mpeg','mp3','swf',
+    'jpg', 'jpeg', 'gif', 'css', 'png', 'js', 'ico', 'txt',
+    'pdf', 'doc', 'ppt', 'mov', 'mp4', 'mpeg', 'mp3', 'swf',
 ]
 
 # extensions in FRESHLY_ASSETS_EXTENTIONS will automatically get a verion number if they appear in a link
@@ -17,6 +16,3 @@ FRESHLY_ASSETS_EXTENTIONS = getattr(settings, 'FRESHLY_ASSETS_EXTENTIONS', FRESH
 
 # extensions in FRESHLY_ASSETS_EXTENTIONS_EXTRA will be appended to FRESHLY_ASSETS_EXTENTIONS
 FRESHLY_ASSETS_EXTENTIONS_EXTRA = getattr(settings, 'FRESHLY_ASSETS_EXTENTIONS_EXTRA', [])
-
-
-

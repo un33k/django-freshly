@@ -4,7 +4,6 @@ DATABASES = {
         'NAME': ':memory:',
     },
 }
-
-# INSTALLED_APPS = [
-#     'freshly',
-# ]
+SECRET_KEY = "un33k"
+INSTALLED_APPS = ['freshly']
+MIDDLEWARE_CLASSES = []
