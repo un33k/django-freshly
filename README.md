@@ -39,12 +39,12 @@ Install `django-freshly` using one of the methods outlined in the `How to instal
     # Add `freshly.middleware.assets.AssetVersioningMiddleware` to your `MIDDLEWARE_CLASSES`.
     # Note: ensure the middleware is the last item in your `MIDDLEWARE_CLASSES`.
 
-    # If you want to limit your asset extension, then overwrite it in your settings file as follow:
+    # Optional: overwrite the extensions list as per your requirements.
     FRESHLY_ASSETS_EXTENTIONS = [
         'jpg', 'jpeg', 'gif', 'css', 'png', 'js', 'ico', 'txt'
     ]
 
-    # Initialize your asset version by adding `FRESHLY_ASSETS_VERSION` to your setting file as follow:
+    # Add `FRESHLY_ASSETS_VERSION` to your setting file.
 
     FRESHLY_ASSETS_VERSION = '001'
 
@@ -52,7 +52,7 @@ Install `django-freshly` using one of the methods outlined in the `How to instal
 
     FRESHLY_ASSETS_VERSION = 'v001'
 
-    # To force clients to fetch a new copy of your website assets, up the version and restart Django.
+    # Up the version and restart Django to force clients reload your website assets.
 
 
 How to use (development):
