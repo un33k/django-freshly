@@ -29,16 +29,17 @@ How to install
         c. run python setup.py
 
 
-How to use
+How to use (production)
 ====================
-Installed `django-freshly` using one of the methods outlined in the `How to install` section.
+Install `django-freshly` using one of the methods outlined in the `How to install` section.
 
    ```python
+    # Add `freshly` to your `INSTALLED_APP`.
+
     # Add `freshly.middleware.assets.AssetVersioningMiddleware` to your `MIDDLEWARE_CLASSES`.
-    # Note: ensue the middleware is last item in your `MIDDLEWARE_CLASSES`.
+    # Note: ensure the middleware is the last item in your `MIDDLEWARE_CLASSES`.
 
     # If you want to limit your asset extension, then overwrite it in your settings file as follow:
-
     FRESHLY_ASSETS_EXTENTIONS = [
         'jpg', 'jpeg', 'gif', 'css', 'png', 'js', 'ico', 'txt'
     ]
@@ -51,11 +52,19 @@ Installed `django-freshly` using one of the methods outlined in the `How to inst
 
     FRESHLY_ASSETS_VERSION = 'v001'
 
-    # You may want to have a fresh copy of your .css, .js downloaded by your browser during the development
+    # To force clients to fetch a new copy of your website assets, up the version and restart Django.
+
+
+How to use (development):
+=================
+    # You may want to have a fresh copy of your .css, .js downloaded by your browser during development
     # You can do so via ``FRESHLY_ASSETS_ALWAYS_FRESH`` in your settings file.
     # Examples:
 
-    FRESHLY_ASSETS_ALWAYS_FRESH = True # OR
+    FRESHLY_ASSETS_ALWAYS_FRESH = True
+
+    # OR
+
     FRESHLY_ASSETS_ALWAYS_FRESH = DEBUG
    ```
 
