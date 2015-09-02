@@ -72,7 +72,7 @@ Add `FRESHLY_ASSETS_ALWAYS_FRESH` to your settings file.
 
 Performance:
 =================
-The application is a perfect tool for the front-end designers during the development.
+The application is a perfect tool for the front-end designers during development.
 
 
 Running the tests
