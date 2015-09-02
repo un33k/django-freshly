@@ -20,17 +20,17 @@ ASSETS_PATTERNS = (
     .format('|'.join(extesions))
 )
 
+
 class AssetVersioningMiddleware(object):
     """
     A Django middleware that adds a version number to assets within the response content.
     """
     def process_response(self, request, response):
-
         if defaults.FRESHLY_ASSETS_ALWAYS_FRESH:
-            ver = 'v'+str(random.choice([x for x in range(1000,10000000)]))
+            ver = 'v' + str(random.choice([x for x in range(1000, 10000000)]))
         else:
             ver = defaults.FRESHLY_ASSETS_VERSION
         if ver and response.status_code == 200 and response["content-type"].startswith("text/html"):
-            response.content = re.sub(ASSETS_PATTERNS,'\\1\\2\\3{}{}\\4'.format('?', ver),
+            response.content = re.sub(ASSETS_PATTERNS, '\\1\\2\\3{}{}\\4'.format('?', ver),
                 smart_text(response.content))
         return response
