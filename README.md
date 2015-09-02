@@ -57,10 +57,10 @@ Install `django-freshly` using one of the methods outlined in the `How to instal
 
 How to use (development):
 =================
-    # You may want to have a fresh copy of your .css, .js downloaded by your browser during development
-    # You can do so via ``FRESHLY_ASSETS_ALWAYS_FRESH`` in your settings file.
-    # Examples:
+    # Add `FRESHLY_ASSETS_ALWAYS_FRESH` to your settings file.
+    # Set it to True to force a fresh copy of your assets to the browsers.
 
+    # Note: Do not use in production.
     FRESHLY_ASSETS_ALWAYS_FRESH = True
 
     # OR
@@ -70,12 +70,7 @@ How to use (development):
 
 Performance:
 =================
-While this process may consumes some minimal CPU cycles, the fact that it's doing it without
-any complications to your code-space should be a good reason for you to consider this app.
-
 The application is a perfect tool for the front-end designers during the development.
-It ensures that you see the result of your changes immediately without constantly
-hitting the browser's refresh button or reseting the history.
 
 
 Running the tests
