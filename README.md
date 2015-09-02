@@ -53,11 +53,13 @@ Install `django-freshly` using one of the methods outlined in the `How to instal
     FRESHLY_ASSETS_VERSION = 'v001'
 
     # Up the version and restart Django to force clients reload your website assets.
-
+   ```
 
 How to use (development):
 =================
-    # Add `FRESHLY_ASSETS_ALWAYS_FRESH` to your settings file.
+Add `FRESHLY_ASSETS_ALWAYS_FRESH` to your settings file.
+
+   ```python
     # Set it to True to force a fresh copy of your assets to the browsers.
 
     # Note: Do not use in production.
